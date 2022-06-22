@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.myaccountapp.adapter.RecordPagerAdapter;
 import com.example.myaccountapp.frag_record.IncomeFragment;
+import com.example.myaccountapp.frag_record.BaseRecordFragment;
 import com.example.myaccountapp.frag_record.OutcomeFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -33,7 +34,7 @@ public class RecordActivity extends AppCompatActivity {
 //        初始化ViewPager页面的集合
         List<Fragment> fragmentList = new ArrayList<>();
 //        创建收入和支出页面，放置在Fragment当中
-        OutcomeFragment outFrag = new OutcomeFragment(); //支出
+        BaseRecordFragment outFrag = new OutcomeFragment(); //支出
         IncomeFragment inFrag = new IncomeFragment(); //收入
 
         fragmentList.add(outFrag);
