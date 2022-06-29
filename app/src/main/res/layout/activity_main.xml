@@ -58,7 +58,6 @@
         android:layout_alignBottom="@id/main_btn_more"
         android:background="@drawable/main_record_btn_bg"
         android:layout_toLeftOf="@id/main_btn_more"
-        android:onClick="onClick"
         android:text="@string/editone"
         android:textStyle="bold"
         android:textColor="@color/white"

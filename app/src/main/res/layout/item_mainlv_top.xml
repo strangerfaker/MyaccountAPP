@@ -46,7 +46,7 @@
             android:layout_below="@+id/item_mainlv_top_tv_out"
             />
         <TextView
-            android:id="@+id/item_mainlv_top_in"
+            android:id="@+id/item_mainlv_top_tv_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="￥ 0"
@@ -84,6 +84,7 @@
             android:text="@string/see_excel"
             android:textColor="@color/green_006400"
             android:drawablePadding="10dp"
+            android:onClick="onClick"
             />
 
 

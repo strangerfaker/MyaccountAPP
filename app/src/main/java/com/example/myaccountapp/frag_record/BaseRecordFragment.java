@@ -17,12 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myaccountapp.R;
-import com.example.myaccountapp.adapter.TypeBaseAdapter;
 import com.example.myaccountapp.db.AccountBean;
-import com.example.myaccountapp.db.DBManager;
 import com.example.myaccountapp.db.TypeBean;
 import com.example.myaccountapp.utils.BeiZhuDialog;
 import com.example.myaccountapp.utils.KeyBoardUtils;
+import com.example.myaccountapp.utils.SelectTimeDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -158,20 +157,38 @@ public abstract class BaseRecordFragment extends Fragment implements View.OnClic
             }
         });
     }
-    //父类中的抽象方法在子类中调用再进行详细操作   必须要重写该方法(更为严谨)
+
+    //多态化保存记账到数据库中  子类必须要重写该方法(更为严谨)
     //抽象方法必要添加抽象类故而将BaseRecordFragment 变为抽象类
+    //子类必须具体实现父类抽象方法的一种提醒机制。
     public abstract void saveAccoutToDB();
 
     public void onClick(View v){
         switch (v.getId()){
             case R.id.frag_record_tv_time:
+                showTimeDialog();
                 break;
             case R.id.frag_record_tv_beizhu:
                 showBZDialog();
                 break;
         }
     }
-    //
+    //弹出显示时间对话框
+    private  void showTimeDialog(){
+        SelectTimeDialog dialog = new SelectTimeDialog(getContext());
+        dialog.show();
+        //设置按钮点击监听
+        dialog.setOnEnsureListener(new SelectTimeDialog.OnEnsureListener() {
+            @Override
+            public void onEnsure(String time, int year, int month, int day) {
+                timeTv.setText(time);
+                accountBean.setTime(time);
+                accountBean.setYear(year);
+                accountBean.setMonth(month);
+                accountBean.setDay(day);
+            }
+        });
+    }
     //弹出备注对话框
     private void showBZDialog() {
         final BeiZhuDialog dialog = new BeiZhuDialog(getContext());

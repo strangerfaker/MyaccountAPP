@@ -10,7 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAccountAPP">
-        <activity android:name=".RecordActivity"></activity>
+        <activity android:name=".MonthChartActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".RecordActivity" />
+        <activity android:name=".SettingActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.myaccountapp.adapter;
+package com.example.myaccountapp.frag_record;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -39,7 +39,7 @@ public class TypeBaseAdapter extends BaseAdapter {
         return position;
     }
 
-    // 此适配器不考虑复用问题，因为所有的item都显示在界面上，不会因为滑动就消失，所有没有剩余的convertView，所以不用复写
+    // 此适配器不考虑复用问题，因为所有的item都显示在界面上，不会因为滑动就消失，所有没有剩余的convertView，不用复写
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.item_recordfrag_gv,parent,false);
